@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Device Details</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            width: 30%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Device Details</h1>
+
+<table>
+
+<tr>
+    <th>Host Name</th>
+    <td>{{ device.host_name }}</td>
+</tr>
+
+<tr>
+    <th>System IP</th>
+    <td>{{ device.system_ip }}</td>
+</tr>
+
+<tr>
+    <th>Device Type</th>
+    <td>{{ device.device_type }}</td>
+</tr>
+
+<tr>
+    <th>Site ID</th>
+    <td>{{ device.site_id }}</td>
+</tr>
+
+<tr>
+    <th>Status</th>
+    <td>{{ device.status }}</td>
+</tr>
+
+<tr>
+    <th>Total CPU</th>
+    <td>{{ device.cpu_count }}</td>
+</tr>
+
+<tr>
+    <th>Control Connections</th>
+    <td>{{ device.control_connections }}</td>
+</tr>
+
+<tr>
+    <th>BFD Sessions</th>
+    <td>{{ device.bfd_sessions }}</td>
+</tr>
+
+<tr>
+    <th>Version</th>
+    <td>{{ device.version }}</td>
+</tr>
+
+<tr>
+    <th>Board Serial</th>
+    <td>{{ device.board_serial }}</td>
+</tr>
+
+<tr>
+    <th>UUID</th>
+    <td>{{ device.uuid }}</td>
+</tr>
+
+</table>
+
+<br>
+
+<a href="/devices/">Back to Devices</a>
+
+</body>
+</html>

@@ -85,6 +85,73 @@
 #     print(json.dumps(devices, indent=4))
 
 ######################################## 16th MAy test 2 ############################
+# from django.shortcuts import render
+# import requests
+# import urllib3
+
+# urllib3.disable_warnings()
+
+# VMANAGE_HOST = "https://sandbox-sdwan-2.cisco.com"
+# USERNAME = "devnetuser"
+# PASSWORD = "RG!_Yw919_83"
+
+
+# def get_jsessionid():
+#     url = f"{VMANAGE_HOST}/j_security_check"
+
+#     payload = {
+#         'j_username': USERNAME,
+#         'j_password': PASSWORD
+#     }
+
+#     session = requests.session()
+
+#     response = session.post(
+#         url,
+#         data=payload,
+#         verify=False
+#     )
+
+#     if response.status_code != 200:
+#         return None
+
+#     return session
+
+
+# def devices_view(request):
+
+#     session = get_jsessionid()
+
+#     if not session:
+#         return render(request, 'devices.html', {
+#             'error': 'Login Failed'
+#         })
+
+#     url = f"{VMANAGE_HOST}/dataservice/device"
+
+#     response = session.get(
+#         url,
+#         verify=False
+#     )
+
+#     data = response.json()
+
+#     devices = []
+
+#     for d in data['data']:
+#         devices.append({
+#             'host_name': d.get('host-name'),
+#             'device_id': d.get('deviceId'),
+#             'system_ip': d.get('system-ip'),
+#             'site_id': d.get('site-id'),
+#             'device_type': d.get('device-type'),
+#             'status': d.get('reachability'),
+#         })
+    
+#     return render(request, 'dashboard/devices.html', {'devices': devices})
+
+
+####### Test 2 16th May 2026 ############################
 from django.shortcuts import render
 import requests
 import urllib3
@@ -95,50 +162,40 @@ VMANAGE_HOST = "https://sandbox-sdwan-2.cisco.com"
 USERNAME = "devnetuser"
 PASSWORD = "RG!_Yw919_83"
 
+def get_session():
 
-def get_jsessionid():
-    url = f"{VMANAGE_HOST}/j_security_check"
+    session = requests.session()
+
+    login_url = f"{VMANAGE_HOST}/j_security_check"
 
     payload = {
         'j_username': USERNAME,
         'j_password': PASSWORD
     }
 
-    session = requests.session()
-
-    response = session.post(
-        url,
+    session.post(
+        login_url,
         data=payload,
         verify=False
     )
-
-    if response.status_code != 200:
-        return None
 
     return session
 
 
 def devices_view(request):
 
-    session = get_jsessionid()
-
-    if not session:
-        return render(request, 'devices.html', {
-            'error': 'Login Failed'
-        })
+    session = get_session()
 
     url = f"{VMANAGE_HOST}/dataservice/device"
 
-    response = session.get(
-        url,
-        verify=False
-    )
+    response = session.get(url, verify=False)
 
     data = response.json()
 
     devices = []
 
     for d in data['data']:
+
         devices.append({
             'host_name': d.get('host-name'),
             'device_id': d.get('deviceId'),
@@ -147,6 +204,48 @@ def devices_view(request):
             'device_type': d.get('device-type'),
             'status': d.get('reachability'),
         })
-    
-    return render(request, 'dashboard/devices.html', {'devices': devices})
-    
+
+    return render(
+        request,
+        'dashboard/devices.html',
+        {'devices': devices}
+    )
+
+
+def device_detail(request, system_ip):
+
+    session = get_session()
+
+    url = f"{VMANAGE_HOST}/dataservice/device"
+
+    response = session.get(url, verify=False)
+
+    data = response.json()
+
+    device = None
+
+    for d in data['data']:
+
+        if d.get('system-ip') == system_ip:
+
+            device = {
+                'host_name': d.get('host-name'),
+                'system_ip': d.get('system-ip'),
+                'device_type': d.get('device-type'),
+                'site_id': d.get('site-id'),
+                'status': d.get('reachability'),
+                'cpu_count': d.get('total_cpu_count'),
+                'control_connections': d.get('controlConnections'),
+                'bfd_sessions': d.get('bfdSessions'),
+                'version': d.get('version'),
+                'board_serial': d.get('board-serial'),
+                'uuid': d.get('uuid'),
+            }
+
+            break
+
+    return render(
+        request,
+        'dashboard/device_detail.html',
+        {'device': device}
+    )

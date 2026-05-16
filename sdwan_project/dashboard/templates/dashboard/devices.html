@@ -65,7 +65,11 @@ controller
 {% endif %}
 ">
 
-    <td>{{ d.host_name }}</td>
+    <<td>
+    <a href="/devices/{{ d.system_ip }}/">
+        {{ d.host_name }}
+    </a>
+    </td>
 
     <td>{{ d.device_id }}</td>
 
