@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SDWAN Devices</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .reachable {
+            color: green;
+            font-weight: bold;
+        }
+
+        .unreachable {
+            color: red;
+            font-weight: bold;
+        }
+
+        .controller {
+            font-weight: bold;
+            background-color: #fff3cd;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>SDWAN Device Inventory</h1>
+
+<table>
+
+<tr>
+    <th>Host Name</th>
+    <th>Device ID</th>
+    <th>System IP</th>
+    <th>Site ID</th>
+    <th>Device Type</th>
+    <th>Status</th>
+</tr>
+
+{% for d in devices %}
+
+<tr class="
+{% if d.device_type == 'vmanage' or d.device_type == 'vsmart' or d.device_type == 'vbond' %}
+controller
+{% endif %}
+">
+
+    <td>{{ d.host_name }}</td>
+
+    <td>{{ d.device_id }}</td>
+
+    <td>{{ d.system_ip }}</td>
+
+    <td>{{ d.site_id }}</td>
+
+    <td>
+        {% if d.device_type == 'vmanage' or d.device_type == 'vsmart' or d.device_type == 'vbond' %}
+            <b>{{ d.device_type }}</b>
+        {% else %}
+            {{ d.device_type }}
+        {% endif %}
+    </td>
+
+    <td class="
+        {% if d.status == 'reachable' %}
+            reachable
+        {% else %}
+            unreachable
+        {% endif %}
+    ">
+        {{ d.status }}
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
