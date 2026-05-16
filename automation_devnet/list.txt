@@ -1,0 +1,751 @@
+netg@DESKTOP-EBH0I8A:~/devnet$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> device = "Router"
+>>> 
+>>> device[0]
+'R'
+>>> device[1]
+'o'
+>>> device[2]
+'u'
+>>> device[3]
+'t'
+>>> 
+>>> device_list = ["Router", "sw", "fw", "LB"]
+>>> 
+>>> device_list[0]
+'Router'
+>>> device_list[1]
+'sw'
+>>> device_list[2]
+'fw'
+>>> device_list[3]
+'LB'
+>>> device_list[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> 
+>>> 
+>>> device_list[-1]
+'LB'
+>>> 
+>>> device_list[1:2]
+['sw']
+>>> 
+>>> device_list[0:2]
+['Router', 'sw']
+>>> 
+>>> 
+>>> device_list[-1]
+'LB'
+>>> device_list[-1:2]
+[]
+>>> device_list[-1:-2]
+[]
+>>> device_list[-1:1
+... 
+... 
+... 
+KeyboardInterrupt
+>>> 
+>>> device_list[-1:1]
+[]
+>>> device_list[0:-1]
+['Router', 'sw', 'fw']
+>>> 
+>>> device_list[0:-1:-1]
+[]
+>>> device_list[::-1]
+['LB', 'fw', 'sw', 'Router']
+>>> 
+>>> 
+>>> device[::-1]
+'retuoR'
+>>> 
+>>> 
+>>> item_list = [1, "SW", 2, "FW"]
+>>> 
+>>> item_list[0]
+1
+>>> item_list[1]
+'SW'
+>>> item_list[2]
+2
+>>> item_list[3]
+'FW'
+>>> 
+>>> 
+>>> list_1 = [[1,2,3],[4,5],[6,7],[8,9]]
+>>> 
+>>> 
+>>> list_1[0]
+[1, 2, 3]
+>>> 
+>>> list_1[1]
+[4, 5]
+>>> list_1[2]
+[6, 7]
+>>> list_1[3]
+[8, 9]
+>>> 
+>>> 
+>>> list_1
+[[1, 2, 3], [4, 5], [6, 7], [8, 9]]
+>>> 
+>>> list_1[0]
+[1, 2, 3]
+>>> 
+>>> 
+>>> list_1
+[[1, 2, 3], [4, 5], [6, 7], [8, 9]]
+>>> 
+>>> list_1[0]
+[1, 2, 3]
+>>> 
+>>> list_a = list_1
+>>> 
+>>> list_a = list_1[0]
+>>> 
+>>> list_1
+[[1, 2, 3], [4, 5], [6, 7], [8, 9]]
+>>> list_a
+[1, 2, 3]
+>>> 
+>>> list_a[1]
+2
+>>> list_1[0][1]
+2
+>>> 
+>>> 
+>>> 
+>>> list_1[2][1]
+7
+>>> 
+>>> list_1[1][0]
+4
+>>> 
+>>> 
+>>> list_1 = [[1,2,["Router","Sw"]],[4,["Firewall", "LB"],5],[6,7],[8,9]]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> list_1[0][2][0]
+'Router'
+>>> 
+>>> list_1[1][1][1]
+'LB'
+>>> 
+>>> list_1[0][2]
+['Router', 'Sw']
+>>> list_1[0][2][0][2]
+'u'
+>>> list_1[0][2][0]
+'Router'
+>>> 
+>>> list_1[0][2][0][2]
+'u'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> device_list = ["Router", "sw", "fw", "LB"]
+>>> 
+>>> for item in device_list:
+...   print(item)
+... 
+Router
+sw
+fw
+LB
+>>> 
+>>> list_1 = [[1,2,["Router","Sw"]],[4,["Firewall", "LB"],5],[6,7],[8,9]]
+>>> 
+>>> for item in list_1:
+...   print(item)
+... 
+[1, 2, ['Router', 'Sw']]
+[4, ['Firewall', 'LB'], 5]
+[6, 7]
+[8, 9]
+>>> 
+>>> 
+>>> list_1[0]
+[1, 2, ['Router', 'Sw']]
+>>> list_1[0][2]
+['Router', 'Sw']
+>>> list_1[0][2][0]
+'Router'
+>>> 
+>>> list_1[0][2][0][2]
+'u'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> list_1[0][2][1][1]
+'w'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> list_1 = [[1,2,["Router","Sw"]],[4,["Firewall", "LB"],5],[6,7],[8,9]]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> device_list = ["Router", "sw", "fw", "LB"]
+>>> 
+>>> device_list.sort()
+>>> 
+>>> output = device_list.sort()
+>>> output
+>>> 
+>>> help(list.sort)
+
+>>> 
+>>> 
+>>> device_list
+['LB', 'Router', 'fw', 'sw']
+>>> 
+>>> 
+>>> device_list.sort()
+>>> 
+>>> device_list
+['LB', 'Router', 'fw', 'sw']
+>>> 
+>>> 
+>>> device_list.reverse
+<built-in method reverse of list object at 0x7f698be9aec0>
+>>> 
+>>> device_list.reverse()
+>>> 
+>>> device_list
+['sw', 'fw', 'Router', 'LB']
+>>> 
+>>> 
+>>> device_list.reverse()
+>>> 
+>>> device_list
+['LB', 'Router', 'fw', 'sw']
+>>> 
+>>> 
+>>> device_list.sort()
+>>> 
+>>> device_list
+['LB', 'Router', 'fw', 'sw']
+>>> 
+>>> 
+>>> device_list[1]
+'Router'
+>>> 
+>>> device_list[1].upper()
+'ROUTER'
+>>> 
+>>> device_list[1].lower()
+'router'
+>>> 
+>>> device_list
+['LB', 'Router', 'fw', 'sw']
+>>> 
+>>> 
+>>> 
+>>> help(list.sort)
+
+>>> 
+>>> 
+>>> 
+>>> for vlan_id in range(0,10):
+...     print(f" vlan {vlan_id}")
+...     print(f" vlan_name {vlan_id}")
+... 
+ vlan 0
+ vlan_name 0
+ vlan 1
+ vlan_name 1
+ vlan 2
+ vlan_name 2
+ vlan 3
+ vlan_name 3
+ vlan 4
+ vlan_name 4
+ vlan 5
+ vlan_name 5
+ vlan 6
+ vlan_name 6
+ vlan 7
+ vlan_name 7
+ vlan 8
+ vlan_name 8
+ vlan 9
+ vlan_name 9
+>>> 
+>>> 
+>>> for vlan_id in range(0,10):
+...     print(" vlan_name {}".format(vlan_id))
+... 
+ vlan_name 0
+ vlan_name 1
+ vlan_name 2
+ vlan_name 3
+ vlan_name 4
+ vlan_name 5
+ vlan_name 6
+ vlan_name 7
+ vlan_name 8
+ vlan_name 9
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> help(list.remove)
+
+>>> 
+>>> 
+>>> device_list = ["Router", "sw", "fw", "LB"]
+>>> 
+>>> 
+>>> device_list.remove("sw")
+>>> 
+>>> device_list
+['Router', 'fw', 'LB']
+>>> 
+>>> help(list.remove)
+
+>>> 
+>>> 
+>>> device_list.pop()
+'LB'
+>>> 
+>>> 
+>>> 
+>>> help(list.pop)
+
+>>> 
+>>> 
+>>> 
+>>> device_list.remove("sw")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> 
+>>> 
+>>> 
+>>> device_list.remove("sw")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> help(list.insert)
+
+>>> 
+>>> 
+>>> device_list.insert(2, "LB")
+>>> 
+>>> 
+>>> 
+>>> device_list
+['Router', 'fw', 'LB']
+>>> 
+>>> 
+>>> device_list.insert(1, "vm")
+>>> 
+>>> device_list
+['Router', 'vm', 'fw', 'LB']
+>>> 
+>>> help(list.index)
+
+>>> 
+>>> 
+>>> device_list.index("LB")
+3
+>>> 
+>>> 
+>>> testlist = [1,2,3,4]
+>>> 
+>>> testlist = ["cisco", "Juniper", "Avaya"]
+>>> 
+>>> device_list.extend(testlist)
+>>> 
+>>> 
+>>> device_list
+['Router', 'vm', 'fw', 'LB', 'cisco', 'Juniper', 'Avaya']
+>>> 
+>>> 
+>>> 
+>>> device_list = ["Router", "sw", "fw", "LB"]
+>>> 
+>>> testlist = ["cisco", "Juniper", "Avaya"]
+>>> 
+>>> zip(device_list, testlist)
+<zip object at 0x7f698ab1c380>
+>>> 
+>>> newlist = zip(device_list, testlist)
+>>> 
+>>> newlist
+<zip object at 0x7f698ab1ca40>
+>>> 
+>>> 
+>>> 
+>>> print(newlist)
+<zip object at 0x7f698ab1ca40>
+>>> 
+>>> 
+>>> 
+>>> 
+>>> list(zip)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'type' object is not iterable
+>>> list(newlist)
+[('Router', 'cisco'), ('sw', 'Juniper'), ('fw', 'Avaya')]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> testlist = ["cisco", "Juniper", "PaloAlto", "F5"]
+>>> 
+>>> 
+>>> zip(device_list, testlist)
+<zip object at 0x7f698aacfdc0>
+>>> 
+>>> newlist = zip(device_list, testlist)
+>>> 
+>>> list(newlist)
+[('Router', 'cisco'), ('sw', 'Juniper'), ('fw', 'PaloAlto'), ('LB', 'F5')]
+>>> 
+>>> 
+>>> 
+>>> newlist
+<zip object at 0x7f698ab1c680>
+>>> 
+>>> list(newlist)
+[]
+>>> 
+>>> newlist = zip(device_list, testlist)
+>>> 
+>>> list(newlist)
+[('Router', 'cisco'), ('sw', 'Juniper'), ('fw', 'PaloAlto'), ('LB', 'F5')]
+>>> 
+>>> 
+>>> list(newlist[0])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'zip' object is not subscriptable
+>>> 
+>>> 
+>>> 
+>>> final_list = list(zip(device_list, testlist))
+>>> 
+>>> 
+>>> final_list
+[('Router', 'cisco'), ('sw', 'Juniper'), ('fw', 'PaloAlto'), ('LB', 'F5')]
+>>> 
+>>> 
+>>> 
+>>> final_list[0]
+('Router', 'cisco')
+>>> 
+>>> type(final_list[0])
+<class 'tuple'>
+>>> 
+>>> 
+>>> device_list
+['Router', 'sw', 'fw', 'LB']
+>>> 
+>>> testlist
+['cisco', 'Juniper', 'PaloAlto', 'F5']
+>>> 
+>>> 
+>>> newlist = zip(testlist, device_list)
+>>> 
+>>> newlist = list(zip(testlist, device_list))
+>>> 
+>>> type(newlist)
+<class 'list'>
+>>> 
+>>> 
+>>> type(newlist[0])
+<class 'tuple'>
+>>> 
+>>> newlist
+[('cisco', 'Router'), ('Juniper', 'sw'), ('PaloAlto', 'fw'), ('F5', 'LB')]
+>>> 
+>>> 
+>>> newlist
+[('cisco', 'Router'), ('Juniper', 'sw'), ('PaloAlto', 'fw'), ('F5', 'LB')]
+>>> 
+>>> newlist[0]
+('cisco', 'Router')
+>>> 
+>>> newlist[0][0]
+'cisco'
+>>> 
+>>> newlist[0][1]
+'Router'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> var1 = (1,2,3)
+>>> 
+>>> var1 = (1,2,3)
+>>> 
+>>> type(var1)
+<class 'tuple'>
+>>> 
+>>> 
+>>> 
+>>> 
+>>> device_count
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'device_count' is not defined. Did you mean: 'device_list'?
+>>> device_count = [1,2,3,4]
+>>> 
+>>> 
+>>> newlist = list(zip(testlist, device_list, device_count))
+>>> 
+>>> newlist
+[('cisco', 'Router', 1), ('Juniper', 'sw', 2), ('PaloAlto', 'fw', 3), ('F5', 'LB', 4)]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> print("hello")
+hello
+>>> 
+>>> 
+>>> 
+>>> 
+>>> for item in newlist:
+...     print(item)
+... 
+('cisco', 'Router', 1)
+('Juniper', 'sw', 2)
+('PaloAlto', 'fw', 3)
+('F5', 'LB', 4)
+>>> 
+>>> 
+>>> for item in newlist:
+...     print(item[0])
+... 
+cisco
+Juniper
+PaloAlto
+F5
+>>> 
+>>> for item in newlist:
+...     print(item[1])
+... 
+Router
+sw
+fw
+LB
+>>> 
+>>> 
+>>> 
+>>> newlist
+[('cisco', 'Router', 1), ('Juniper', 'sw', 2), ('PaloAlto', 'fw', 3), ('F5', 'LB', 4)]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> newlist[2][1]
+'fw'
+>>> 
+>>> 
+>>> lista = [1,2,3]
+>>> lista[2] = 5
+>>> 
+>>> lista
+[1, 2, 5]
+>>> 
+>>> device = "Router"
+>>> 
+>>> device[2] = "O"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> 
+>>> 
+>>> t1 = (1,2,3)
+>>> 
+>>> t1[2] = 4
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> 
+>>> 
+>>> dir(tuple)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> lista = [1,2,3]
+>>> 
+>>> lista.clear()
+>>> 
+>>> lista
+[]
+>>> 
+>>> 
+>>> 
+>>> lista = [1,2,3]
+>>> 
+>>> list_b = lista
+>>> 
+>>> list_b
+[1, 2, 3]
+>>> 
+>>> id(list_b)
+140091273395776
+>>> id(lista)
+140091273395776
+>>> 
+>>> list_b.append([1,2])
+>>> 
+>>> list_b
+[1, 2, 3, [1, 2]]
+>>> list_a
+[1, 2, 3]
+>>> 
+>>> list_b
+[1, 2, 3, [1, 2]]
+>>> 
+>>> 
+>>> list_a
+[1, 2, 3]
+>>> list_b = [4, 5, 6]
+>>> 
+>>> list_b
+[4, 5, 6]
+>>> 
+>>> list_a = list_b
+>>> 
+>>> list_a
+[4, 5, 6]
+>>> 
+>>> list_b
+[4, 5, 6]
+>>> 
+>>> id(list_a)
+140091274884224
+>>> id(list_b)
+140091274884224
+>>> 
+>>> list_b[1] = 7
+>>> 
+>>> list_a
+[4, 7, 6]
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> list_a
+[4, 7, 6]
+>>> 
+>>> list_c = list_a.copy()
+>>> 
+>>> list_c
+[4, 7, 6]
+>>> 
+>>> id(list_a)
+140091274884224
+>>> id(list_c)
+140091273395200
+>>> 
+>>> 
+>>> list_a[2] = 9
+>>> 
+>>> list_a
+[4, 7, 9]
+>>> list_c
+[4, 7, 6]
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> list_d = [2,3,4]
+>>> 
+>>> list_d.append(5)
+>>> 
+>>> list_d
+[2, 3, 4, 5]
+>>> 
+>>> list_d.extend([5,4,5])
+>>> 
+>>> list_d
+[2, 3, 4, 5, 5, 4, 5]
+>>> 
+>>> help(list.extend)
+
+>>> 
+>>> help(list.append)
+
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> type(list_d)
+<class 'list'>
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 

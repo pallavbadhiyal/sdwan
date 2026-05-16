@@ -1,0 +1,5 @@
+{%- for each in inventory_hostname -%} 
+{%- for data in parsed_interfaces -%} 
+{{ inventory_hostname }},{{data.INTERFACE}},{{data.IP_ADDRESS}},{{data.PROTO}},{{data.STATUS}}
+{% endfor %}
+{% endfor %}

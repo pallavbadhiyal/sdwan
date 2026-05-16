@@ -1,0 +1,43 @@
+- name: Parse network output and write to CSV
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run command on the device
+      ios_command:
+        commands:
+          - "show ip interface brief"
+      register: command_output
+
+    - name: Parse output with NTC template
+      set_fact:
+        parsed_interfaces: "{{ command_output.stdout[0] | parse_cli_textfsm('ntc-templates/ntc_templates/templates/cisco_ios_show_ip_interface_brief.textfsm') }}"
+
+
+    - name: "1010 - OUTPUT DEVICE INFO"
+      debug:
+        var: parsed_interfaces
+   
+
+    # - name: Write data to CSV
+    #   copy:
+    #     content: "{{ parsed_interfaces }}"
+    #     dest: "{{ inventory_hostname }}.csv"
+
+    # - name: Write csv file
+    #   local_action: 
+    #     module: lineinfile
+    #     dest: "output.csv"
+    #     line: "Hostname,interface,IP,status"
+    #     create: yes
+
+    # - name: Write DATA to csv file
+    #   local_action: 
+    #     module: lineinfile
+    #     dest: "output.csv"
+    #     line: "{{ inventory_hostname }}, {{ parsed_interfaces }}"
+
+    - name: Write DATA to csv file
+      template:
+        src: genrate_csv.j2
+        dest: "output.csv"
+          

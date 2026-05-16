@@ -1,0 +1,286 @@
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> intf_list = ["gig0/1","gig0/2","gig0/3","gig0/4"]
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4']
+>>> 
+>>> 
+>>> intf_list[0]
+'gig0/1'
+>>> intf_list[1]
+'gig0/2'
+>>> 
+>>> help(list.append)
+
+>>> 
+>>> intf_list.append("gig0/5"
+... 
+... )
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> new_intf_list = ["gig0/6", "gig0/7"]
+>>> 
+>>> 
+>>> intf_list.append(new_intf_list)
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', ['gig0/6', 'gig0/7']]
+>>> 
+>>> 
+>>> intf_list[-1]
+['gig0/6', 'gig0/7']
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> new_intf_list.clear()
+>>> 
+>>> new_intf_list
+[]
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> new_intf_list = intf_list
+>>> 
+>>> new_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> id(new_intf_list)
+140696501526848
+>>> 
+>>> id(intf_list)
+140696501526848
+>>> 
+>>> 
+>>> my_intf_list = intf_list.copy()
+>>> 
+>>> my_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> id(my_intf_list)
+140696499244928
+>>> 
+>>> id(intf_list)
+140696501526848
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> my_intf_list.count()
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: list.count() takes exactly one argument (0 given)
+>>> 
+>>> 
+>>> my_intf_list.count("gig0/1")
+1
+>>> 
+>>> my_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> my_intf_list.pop()
+[]
+>>> 
+>>> my_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5']
+>>> 
+>>> 
+>>> dev_intf_list
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'dev_intf_list' is not defined. Did you mean: 'new_intf_list'?
+>>> dev_intf_list[]
+  File "<stdin>", line 1
+    dev_intf_list[]
+                  ^
+SyntaxError: invalid syntax
+>>> 
+>>> dev_intf_list = []
+>>> 
+>>> dev_intf_list.extend(my_intf_list)
+>>> 
+>>> dev_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5']
+>>> 
+>>> 
+>>> ne
+new_intf_list  next(          
+>>> new_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> 
+>>> dev_intf_list.extend(new_intf_list)
+>>> 
+>>> dev_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', 'gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> new_intf_list.in
+new_intf_list.index(   new_intf_list.insert(  
+>>> new_intf_list.index("gig0/2")
+1
+>>> new_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> help(list.insert)
+
+>>> 
+>>> help(list.insert)
+
+>>> 
+>>> 
+>>> new_intf_list.insert(3, "gig0/10")
+>>> 
+>>> new_intf_list
+['gig0/1', 'gig0/2', 'gig0/3', 'gig0/10', 'gig0/4', 'gig0/5', []]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> help(list.remove)
+
+[1]+  Stopped                 python3
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ 
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> intf_list = ["gig0/1","gig0/2","gig0/3","gig0/4"]
+>>> 
+>>> intf_list.remove("gig0/3")
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/4']
+>>> 
+>>> 
+>>> intf_list.sort()
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/4']
+>>> 
+>>> 
+>>> intf_list.reverse()
+>>> 
+>>> intf_list
+['gig0/4', 'gig0/2', 'gig0/1']
+>>> 
+>>> 
+>>> intf_list.sort()
+>>> 
+>>> intf_list
+['gig0/1', 'gig0/2', 'gig0/4']
+>>> 
+>>> 
+>>> list1 = [1,6,2,8,3,4]
+>>> 
+>>> list1.sort()
+>>> 
+>>> list1
+[1, 2, 3, 4, 6, 8]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+KeyboardInterrupt
+>>> 
+[2]+  Stopped                 python3
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ 
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ 
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ 
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> dir(tuple)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+>>> 
+>>> 
+>>> list1 = [1,2,3,4]
+>>> 
+>>> list1 = [1,2,3,4,4,4]
+>>> 
+>>> t1 = tuple(list1)
+>>> 
+>>> t1
+(1, 2, 3, 4, 4, 4)
+>>> t1[0]
+1
+>>> t1[02]
+  File "<stdin>", line 1
+    t1[02]
+       ^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+>>> t1[2]
+3
+>>> 
+>>> list1
+[1, 2, 3, 4, 4, 4]
+>>> 
+>>> set(list1)
+{1, 2, 3, 4}
+>>> 
+>>> newlist = set(list)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'type' object is not iterable
+>>> newlist = set(list1)
+>>> 
+>>> 
+>>> newlist
+{1, 2, 3, 4}
+>>> newlist  = list(newlist)
+>>> 
+>>> newlist
+[1, 2, 3, 4]
+>>> 
+>>> 
+>>> 
+>>> a = ["10:11AM", "11:11AM", "12:11PM"]
+>>> b = [90, 80, 70]
+>>> c = [1,2,3]
+>>> 
+>>> x = zip(a, b, c)
+>>> 
+>>> #use the tuple() function to display a readable version of the result:
+>>> 
+>>> print(list(x))
+[('10:11AM', 90, 1), ('11:11AM', 80, 2), ('12:11PM', 70, 3)]
+>>> 
+>>> 

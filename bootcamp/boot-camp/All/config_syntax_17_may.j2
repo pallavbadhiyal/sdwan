@@ -1,0 +1,8 @@
+{% for item in conf_vlan["loopback"] -%}
+interface loopback {{ item["loopback_id"] }}
+  ip address {{ item["ip"] }}
+  description Loopback {{ item["loopback_id"] }}
+!
+{% endfor %}
+
+

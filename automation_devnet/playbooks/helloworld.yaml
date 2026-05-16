@@ -1,0 +1,36 @@
+---
+- name: Play A     # This defines a play named "Play A". A play is a collection of tasks that are executed on specified hosts.
+  hosts: localhost # This tells Ansible that this play should run on the localhost, meaning it will run locally on the machine executing the playbook
+                   # localhost refers to the current machine and does not require a remote connection.
+
+  gather_facts: true # When set to true, Ansible will collect system information before running tasks.
+                     # This line tells Ansible to gather facts about the system. Facts are variables that contain information about 
+                     #the system, like its OS, network interfaces, and more.
+
+
+  vars: # This section defines variables that are available for use throughout the playbook
+    device: "Router" # device is a variable, and its value is set to "Router". This variable can be referenced later in the tasks.
+
+  tasks:   # This section lists the individual tasks that will be executed. Each play in an Ansible playbook can have multiple tasks.
+
+    - name: Aadarsh_task1 # The name of this task is "Aadarsh_task1". It’s just a label for identification.
+      debug: # the debug module is used to print messages or variables. It's helpful for troubleshooting or showing outputs during playbook execution.
+        msg: "Love Python & Ansible" # This line specifies that the message "Love Python & Ansible" should be printed.
+
+    - name: Print vars
+      debug:
+        var: device
+
+
+
+
+# gather_facts is True
+
+# - name: Play A
+#   hosts: localhost
+#   gather_facts: false
+
+#   tasks:
+#     - name: Hello World
+#       debug: 
+#         msg: "Hello World"

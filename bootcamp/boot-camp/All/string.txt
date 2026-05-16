@@ -1,0 +1,205 @@
+netg@DESKTOP-EBH0I8A:~/devnet$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> help(str.split)
+
+>>> 
+>>> 
+>>> ip = "10.2.3.4"
+>>> 
+>>> 
+>>> ip
+'10.2.3.4'
+>>> 
+>>> 
+>>> new_ip = ip.split(".")
+>>> 
+>>> 
+>>> new_ip
+['10', '2', '3', '4']
+>>> joined_ip = "".join(new_ip)
+>>> 
+>>> joined_ip
+'10234'
+>>> 
+>>> 
+>>> joined_ip = ".".join(new_ip)
+>>> 
+>>> joined_ip
+'10.2.3.4'
+>>> 
+>>> 
+>>> 
+>>> var1 = "this//is my automation class"
+>>> 
+>>> 
+>>> var1.split("//")
+['this', 'is my automation class']
+>>> 
+>>> "".join(var1.split("//"))
+'thisis my automation class'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> help(str.count)
+
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> len(new_ip)
+4
+>>> 
+>>> if len(new_ip) == 4:
+...     print("Valid ip")
+... else:
+...     print("Invalid ip")
+... 
+Valid ip
+>>> 
+>>> 
+>>> type(new_ip)
+<class 'list'>
+>>> 
+>>> 
+>>> len(ip)
+8
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> ip
+'10.2.3.4'
+>>> 
+>>> 
+>>> ip.startswith("10")
+True
+>>> 
+>>> ip.startswith("20")
+False
+>>> 
+>>> if ip.startswith("10"):
+...     print("Class A Private IP")
+... else:
+...     print("Don't Know")
+... 
+Class A Private IP
+>>> 
+>>> description = "connected to server"
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> description.endswith("server")
+True
+>>> 
+>>> 
+>>> 
+>>> description = "connected to server abc"
+>>> 
+>>> 
+>>> "server" in description
+True
+>>> 
+>>> "Server" in description
+False
+>>> 
+>>> "Server" in "connected to server abc"
+False
+>>> 
+>>> "server" in "connected to server abc"
+True
+>>> 
+>>> 
+>>> if "server" in "connected to server abc":
+...     print("String found")
+... else:
+...     print("String NOT found")
+... 
+String found
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> ip = "10.2.3.4"
+>>> 
+>>> ip = " 10.2.3.4"
+>>> 
+>>> ip.startswith("10")
+False
+>>> 
+>>> ip.startswith(" 10")
+True
+>>> 
+>>> ip = input("Enter your ip:")
+Enter your ip: 10.2.3.4
+>>> 
+>>> ip
+' 10.2.3.4'
+>>> ip.startswith("10")
+False
+>>> 
+>>> 
+>>> ip = input("Enter your ip:")
+Enter your ip:   10.2.3.4
+>>> 
+>>> print(ip)
+   10.2.3.4
+>>> 
+>>> ip = input("Enter your ip:")
+Enter your ip:     10.2.3.4
+>>> ip
+'     10.2.3.4'
+>>> ip.strip()
+'10.2.3.4'
+>>> 
+>>> print(ip)
+     10.2.3.4
+>>> 
+>>> print(ip.strip())
+10.2.3.4
+>>> 
+>>> 
+>>> help(str.strip)
+
+>>> 
+>>> 
+>>> print(ip.strip("2"))
+     10.2.3.4
+>>> 
+>>> print(ip.strip("4"))
+     10.2.3.
+>>> print(ip.strip("10"))
+     10.2.3.4
+>>> print(ip.lstrip("10"))
+     10.2.3.4
+>>> 
+>>> print(ip.lstrip())
+10.2.3.4
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 

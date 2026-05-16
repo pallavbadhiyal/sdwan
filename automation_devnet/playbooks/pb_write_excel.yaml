@@ -1,0 +1,22 @@
+- name: Parse network output and write to CSV
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run command on the device
+      ios_command:
+        commands:
+          - "show ip interface brief"
+      register: command_output
+
+    # - name: Parse output with NTC template
+    #   set_fact:
+    #     parsed_interfaces: "{{ command_output.stdout[0] | parse_cli_textfsm('ntc-templates/ntc_templates/templates/cisco_ios_show_ip_interface_brief.textfsm') | write_excel(excel_file)  }}"
+
+
+    # - name: "1010 - OUTPUT DEVICE INFO"
+    #   debug:
+    #     var: parsed_interfaces
+    
+    - name: Write data to Excel
+      ansible.builtin.debug:
+        msg: "{{ command_output.stdout[0]  | write_excel(excel_file) }}"

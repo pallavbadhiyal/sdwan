@@ -1,0 +1,110 @@
+netg@DESKTOP-EBH0I8A:~/devnet/boot/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> device_info = {"dev": "router",
+...                "model": 9000,
+...                "os": 16.5,
+...                "device_list": ["R1", "R2", "R3"],
+...                "vendor_info": {"name": "cisco",
+...                                "addr": "Bangaluru India"
+...                                }
+...                }
+>>> 
+>>> device_info["dev"]
+'router'
+>>> 
+>>> device_info["model"]
+9000
+>>> device_info["os"]
+16.5
+>>> device_info["device_list"]
+['R1', 'R2', 'R3']
+>>> 
+>>> device_info["vendor_info"]
+{'name': 'cisco', 'addr': 'Bangaluru India'}
+>>> 
+>>> 
+>>> device_info["device_list"]
+['R1', 'R2', 'R3']
+>>> type(device_info["device_list"])
+<class 'list'>
+>>> 
+>>> device_info["device_list"][1]
+'R2'
+>>> 
+>>> for item in device_info["device_list"]:
+...     print(item)
+... 
+R1
+R2
+R3
+>>> device_info["vendor_info"]
+{'name': 'cisco', 'addr': 'Bangaluru India'}
+>>> device_info["vendor_info"]["addr"]
+'Bangaluru India'
+>>> 
+>>> for k, v in device_info["vendor_info"].items():
+...     print(k, v)
+... 
+name cisco
+addr Bangaluru India
+>>> 
+>>> 
+>>> device_info["vendor_info"]["name"][1]
+'i'
+>>> device_info["vendor_info"]["name"]
+'cisco'
+>>> device_info["vendor_info"]
+{'name': 'cisco', 'addr': 'Bangaluru India'}
+>>> 
+>>> 
+>>> device_info = {"dev": "router",
+...                "model": 9000,
+...                "os": 16.5,
+...                "device_list": ["R1", "R2", "R3"],
+...                "vendor_info": {"name": ["cisco", "Juniper", "Avaya"],
+...                                "addr": "Bangaluru India"
+...                                }
+...                }
+>>> 
+>>> 
+>>> device_info["vendor_info"]["name"][1]
+'Juniper'
+>>> 
+>>> if device_info["vendor_info"]["name"][1] == "Juniper":
+...     print("Its Juniper Router")
+... 
+Its Juniper Router
+>>> 
+>>> device_info
+{'dev': 'router', 'model': 9000, 'os': 16.5, 'device_list': ['R1', 'R2', 'R3'], 'vendor_info': {'name': ['cisco', 'Juniper', 'Avaya'], 'addr': 'Bangaluru India'}}
+>>> 
+>>> 
+>>> type(device_info)
+<class 'dict'>
+>>> 
+>>> device_info["vendor_info"]
+{'name': ['cisco', 'Juniper', 'Avaya'], 'addr': 'Bangaluru India'}
+>>> 
+>>> device_info["vendor_info"]["name"]
+['cisco', 'Juniper', 'Avaya']
+>>> 
+>>> 
+>>> device_info["vendor_info"]["name"][1]
+'Juniper'
+>>> 
+>>> 
+>>> device_info.keys()
+dict_keys(['dev', 'model', 'os', 'device_list', 'vendor_info'])
+>>> 
+>>> device_info["vendor_info"]
+{'name': ['cisco', 'Juniper', 'Avaya'], 'addr': 'Bangaluru India'}
+>>> 
+>>> 
+>>> device_info["vendor_info"].keys()
+dict_keys(['name', 'addr'])
+>>> 
+>>> 
+>>> 

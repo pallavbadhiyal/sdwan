@@ -1,0 +1,47 @@
+---
+- name: "GATHER CDP STATUS FROM CISCO SWITCHES"
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: 1001 - Run CDP commands on remote devices
+      cisco.ios.ios_command:
+        commands:
+          - show cdp neighbors
+      register: cdp_output
+
+    - name: 1002 - Debug raw CDP output
+      debug:
+        var: cdp_output.stdout
+
+    - name: 1003 - Include parse_genie role
+      include_role:
+        name: clay584.parse_genie
+
+    - name: 1004 - Parse CDP data using Genie
+      set_fact:
+        # parsed_data: "{{ cdp_output.stdout[0] | parse_genie(command='show cdp neighbors', os='ios') }}"
+        parsed_data: "{{  cdp_output.stdout[0] | parse_cli_textfsm('ntc-templates/ntc_templates/templates/cisco_ios_show_cdp_neighbors.textfsm') }}"
+
+    - name: 1005 - Display parsed CDP data
+      debug:
+        msg: "{{ parsed_data }}"
+
+# - name: Aggregate parsed data on localhost
+#   hosts: localhost
+#   gather_facts: false
+
+#   tasks:
+#     - name: 2001 - Collect parsed interface data from all devices
+#       set_fact:
+#         combined_interfaces: "{{ combined_interfaces | default({}) | combine({item: hostvars[item].parsed_interfaces}) }}"
+#       with_items: "{{ groups['switches'] }}"
+#       when: hostvars[item].parsed_interfaces is defined
+
+#     - name: 2002 - Display combined interface data
+#       debug:
+#         msg : "{{ combined_interfaces }}"
+ 
+#     - name: 2002 - Call Filter to Generate Excel
+#       debug:
+#         msg: "{{ combined_interfaces | convert_interfaces_to_excel }}"

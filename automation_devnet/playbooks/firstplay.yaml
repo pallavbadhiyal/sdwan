@@ -1,0 +1,47 @@
+---
+
+
+- name: Play A
+  hosts: localhost
+  gather_facts: true
+  vars:
+    device: "Router"
+    ip: 10.1.1.1
+
+- name: play switching
+  hosts: localhost
+  gather_facts: false
+  vars:
+    device: "Switch"
+    ip: 10.2.3.4
+    vlan_id: 10
+    ios: "10.2"
+  
+  
+  tasks:
+    - name: switch device config details
+      debug: 
+         msg: "this is swtich config---it is the way to print in sting format"
+         ##### we can not give var here, msg and var shold be given in different debug
+
+    - name: debugging variabke information
+      debug: 
+       var: device  
+      
+    - name: Display set fact value
+      debug:
+        var: ip  
+
+    - name: Display set fact value
+      debug:
+        var: vlan_id
+
+    - name: Display set fact value
+      debug:
+        var: ios        
+       
+
+      
+
+
+

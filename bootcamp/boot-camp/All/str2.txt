@@ -1,0 +1,113 @@
+>>> ping_cmd = "ip 10.1.1.2 source 10.1.2.4"
+>>> 
+>>> 
+>>> ping_syntax = "ping {} source {}"
+>>>
+>>>
+>>> ping_cmd = ping_syntax.format("10.1.1.2", "10.1.2.2")
+>>>
+>>> vlan_syntax = "vlan{}"
+>>>
+>>> vlan_cmd = vlan_syntax.format(10)
+>>>
+>>> int_syntax = "interface {}"
+>>>
+>>> interface_cmd = int_syntax.format(vlan_cmd)
+>>>
+>>>
+>>> vlan_id = 2002
+>>>
+>>> vlan_cmd = f"vlan{vlan_id}"
+>>>
+>>> vlan_cmd
+'vlan2002'
+>>>
+>>>
+>>> src_ip = 1.1.1.1
+  File "<stdin>", line 1
+    src_ip = 1.1.1.1
+                ^^
+SyntaxError: invalid syntax
+>>>
+>>> src_ip = "1.1.1.1"
+>>>
+>>> dst_ip = "2.2.2.2"
+>>>
+>>> ping_cmd = f"ping {dst_ip} source {src_ip}"
+>>> ping_cmd
+'ping 2.2.2.2 source 1.1.1.1'
+>>>
+>>>
+>>>
+>>> ping_cmd
+'ping 2.2.2.2 source 1.1.1.1'
+>>>
+>>>
+>>> ping_cmd.capitalize()
+'Ping 2.2.2.2 source 1.1.1.1'
+>>>
+>>>
+>>>
+>>>
+>>> descriptiom = "Testing VariouS StRing funCtionS"
+>>>
+>>> description.casefold()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'description' is not defined. Did you mean: 'descriptiom'?
+>>>
+>>>
+>>> description = "Testing VariouS StRing funCtionS"
+>>>
+>>> description.casefold()
+'testing various string functions'
+>>>
+>>> len(description)
+32
+>>>
+>>> description.center(90)
+'                             Testing VariouS StRing funCtionS                             '
+>>>
+>>> description.center(90,-)
+  File "<stdin>", line 1
+    description.center(90,-)
+                           ^
+SyntaxError: invalid syntax
+>>>
+>>> description.center(90,'-')
+'-----------------------------Testing VariouS StRing funCtionS-----------------------------'
+>>>
+>>>
+>>> description.endswith('.')
+False
+>>>
+>>> description.endswith('S',25,32)
+True
+>>>
+>>> description.endswith('s',25,32)
+False
+>>>
+>>> description.find('StRing')
+16
+>>>
+>>> description.find('string')
+-1
+>>>
+>>> description.find(description.lower())
+-1
+>>> description.lower()
+'testing various string functions'
+>>>
+>>> des_lower = description.lower()
+>>>
+>>> description.find(des_lower)
+-1
+>>> des_lower
+'testing various string functions'
+>>>
+>>> des_lower.find('string')
+16
+>>>
+>>> description.lower().find('string')
+16
+>>>

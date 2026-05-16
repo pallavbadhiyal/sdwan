@@ -1,0 +1,43 @@
+---
+- name: Create and Update ServiceNow Incident from AWX  # Playbook to create and update an incident in ServiceNow
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    # servicenow_username: "admin"  # Replace with actual username (consider using Ansible Vault for security)
+    # servicenow_password: "u$SZfmgT7%8K"  # Store securely instead of hardcoding (e.g., in Ansible Vault)
+    servicenow_username: "pallavbadhiyal"  # Replace with actual username (consider using Ansible Vault for security)
+    servicenow_password: "Admin@123"  # Store securely instead of hardcoding (e.g., in Ansible Vault)
+
+
+  tasks:
+    - name: Create an incident in ServiceNow  # Task to create an incident in the ServiceNow instance
+      servicenow.servicenow.snow_record:
+        instance: "dev221333"  # ServiceNow instance name (without '.service-now.com')
+        username: "{{ servicenow_username }}"  # Use defined username variable
+        password: "{{ servicenow_password }}"  # Use defined password variable
+        table: "incident"  # ServiceNow table where the record will be created
+        state: "present"  # Ensures the record is created if it doesn't exist
+        data:
+          short_description: "Ansible AWX triggered incident"  # Description of the incident
+          severity: "2"  # Severity level (1 = Critical, 2 = High, etc.)
+          urgency: "2"  # Urgency level
+          impact: "2"  # Impact level
+          caller_id: "{{ servicenow_username }}"  # Assign the incident to the user creating it
+      register: snow_response  # Store the API response for further use
+
+    - name: Show incident details  # Debug task to display the created incident number
+      debug:
+        msg: "Incident {{ snow_response.record.number }} created successfully"  # Prints the incident number
+
+    - name: Update incident work notes in ServiceNow  # Task to add a work note to the created incident
+      servicenow.servicenow.snow_record:
+        instance: "dev221333"
+        username: "{{ servicenow_username }}"
+        password: "{{ servicenow_password }}"
+        table: "incident"
+        state: "present"
+        number: "{{ snow_response.record.number }}"  # Reference the newly created incident number
+        data:
+          work_notes: "Updated via Ansible AWX playbook - Investigation in progress."  # Work note message
+      when: snow_response.record.number is defined  # Ensure an incident was created before updating it

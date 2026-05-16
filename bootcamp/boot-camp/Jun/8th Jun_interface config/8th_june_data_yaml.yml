@@ -1,0 +1,12 @@
+interface: 
+        R1:
+            - int_id: eth3/0
+              ip: 10.0.0.1
+        R2:
+            - int_id: eth3/0
+              ip: 10.0.0.2
+            - int_id: eth3/1
+              ip: 20.0.0.2
+        R3:
+            - int_id: eth3/1
+              ip: 20.0.0.3

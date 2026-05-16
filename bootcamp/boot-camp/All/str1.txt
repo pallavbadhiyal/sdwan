@@ -1,0 +1,207 @@
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ git status
+On branch rohit_learning
+Your branch is up to date with 'origin/rohit_learning'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        str1.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ git add str1.py
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ git status
+On branch rohit_learning
+Your branch is up to date with 'origin/rohit_learning'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   str1.py
+
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ git commit -m "adding new string file"
+[rohit_learning eabd5be] adding new string file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 str1.py
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ git push
+Username for 'https://github.com': rog111122
+Password for 'https://rog111122@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 237 bytes | 237.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/siddiquee4you/boot-camp.git
+   332ee91..eabd5be  rohit_learning -> rohit_learning
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3 str1.py
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3 str1.py
+router
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>>
+>>>
+[4]+  Stopped                 python3
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>>
+>>>
+>>> ping_cmd = "ping 10.1.1.2 source 10.1.2.3"
+>>>
+>>> temp = ping_cmd.replace(1,2,0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: replace() argument 1 must be str, not int
+>>>
+>>> temp = ping_cmd.replace("1","2","0")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object cannot be interpreted as an integer
+>>>
+>>>
+>>>
+
+
+
+
+
+
+
+
+>>> temp = ping_cmd.replace("1","2",0)
+>>>
+>>> temp
+'ping 10.1.1.2 source 10.1.2.3'
+>>>
+>>> temp = ping_cmd.replace("1","2",1)
+>>> temp
+'ping 20.1.1.2 source 10.1.2.3'
+>>>
+>>>
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>>
+>>> help.str(count)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: '_Helper' object has no attribute 'str'
+>>>
+>>> help(str.count)
+
+[5]+  Stopped                 python3
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ temp.count()
+>
+>
+> ^C
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> temp.count()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'temp' is not defined
+>>>
+>>> temp
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'temp' is not defined
+>>> ping_command
+Traceback (most recent call last):
+
+
+
+
+
+
+
+
+  File "<stdin>", line 1, in <module>
+NameError: name 'ping_command' is not defined
+>>>
+>>> ping_cmd = "ip 10.1.1.2 source 10.1.2.4"
+>>>
+>>> ping_cmd.count()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: count() takes at least 1 argument (0 given)
+>>>
+>>> ping_cmd.count(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must be str, not int
+>>>
+>>> ping_cmd.count('0')
+2
+>>>
+>>> ping_cmd.count('0','10')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: slice indices must be integers or None or have an __index__ method
+>>>
+>>>
+>>> help(str.count)
+
+[6]+  Stopped                 python3
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$
+devnet@LAPTOP-31NP9FMP:~/netg/boot-camp$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> ping_command
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ping_command' is not defined
+>>>
+>>>
+>>> ping_cmd = "ip 10.1.1.2 source 10.1.2.4"
+>>>
+>>> ping_cmd.count("10")
+2
+>>>
+>>>
+>>> ping_syntax = "ping {} source {}"
+>>>
+>>> ping_cmd = ping_syntax.format("10.1.1.2", "10.1.2.2")
+>>>
+>>> ping_cmd
+'ping 10.1.1.2 source 10.1.2.2'
+>>>
+>>>
+>>> vlan_syntax = "vlan{}"
+>>> vlan_cmd = vlan_syntax.format(10)
+>>>
+>>> vlan_cmd
+'vlan10'
+>>>
+>>> int_syntax = "interface {}"
+>>> interface_cmd = int_syntax.format(vlan_cmd)
+>>>
+>>> interface_cmd
+'interface vlan10'
+>>>
+>>> interface_cmd = int_syntax.format(vlan_cmd), \n "ip"
+  File "<stdin>", line 1
+    interface_cmd = int_syntax.format(vlan_cmd), \n "ip"
+                                                  ^
+SyntaxError: unexpected character after line continuation character
+>>>
+>>> interface_cmd = int_syntax.format(vlan_cmd), '\n' "ip"
+>>>
+>>> interface_cmd
+('interface vlan10', '\nip')
+>>>
+>>>

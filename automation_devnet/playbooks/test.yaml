@@ -1,0 +1,50 @@
+---
+- name: "GATHER INTERFACE STATUS FROM CISCO SWITCHES"
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+    - name: 1001 - Run show commands on remote devices
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: "interface_output"
+
+    - name: 1002 - Include parse_genie role
+      include_role:
+        name: clay584.parse_genie
+
+    - name: 1003 - Parse interface data using Genie
+      set_fact:
+        parsed_interfaces: "{{ interface_output.stdout[0] | parse_genie(command='show ip interface brief', os='ios') }}"    
+    
+    # - name: 1004 Display parsed structured output
+    #   debug:
+    #     var: interface_output.stdout[0]
+
+    - name: 1005 Write uptime output to a file
+      delegate_to: localhost
+      run_once: true
+      copy:
+        content: "{{ parsed_interfaces  }}"
+        dest: ansible_output.txt
+
+
+# - name: Aggregate parsed data on localhost
+#   hosts: localhost
+#   gather_facts: false
+
+#   tasks:
+#     - name: 2001 - Collect parsed interface data from all devices
+#       set_fact:
+#         combined_interfaces: "{{ combined_interfaces | default({}) | combine({item: hostvars[item].parsed_interfaces}) }}"
+#       with_items: "{{ groups['switches'] }}"
+#       when: hostvars[item].parsed_interfaces is defined
+
+#     - name: 2002 - Display combined interface data
+#       debug:
+#         msg : "{{ combined_interfaces }}"
+ 
+#     - name: 2002 - Call Filter to Generate Excel
+#       debug:
+#         msg: "{{ combined_interfaces | convert_interfaces_to_excel }}"

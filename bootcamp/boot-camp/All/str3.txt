@@ -1,0 +1,128 @@
+>>> ping_syntax.format('2.2.2.2','1.1.1.1')
+'ping 2.2.2.2 source 1.1.1.1'
+>>>
+>>> ping_cmd.split(' ')
+['ping', '2.2.2.2', 'source', '1.1.1.1']
+>>>
+>>> test_split = ping_cmd.split(' ')
+>>>
+>>> test_split
+['ping', '2.2.2.2', 'source', '1.1.1.1']
+>>>
+>>> ' '.join(ping_cmd.split(' ')
+...
+...
+KeyboardInterrupt
+>>>
+>>> ' '.join(ping_cmd.split(' '))
+'ping 2.2.2.2 source 1.1.1.1'
+>>>
+>>>
+>>>
+>>> if (ping_syntax.format('1.1.1.1','2.2.2.2')).startswith('ping'):
+...
+KeyboardInterrupt
+>>>
+>>> if x:
+...
+KeyboardInterrupt
+>>>
+>>> if (ping_syntax.format('1.1.1.1','2.2.2.2')).startswith('ping'):
+...     print('correct syntax')
+... else:
+...     print('incorrect syntax')
+...
+[1]+  Stopped                 python3
+devnet@LAPTOP-31NP9FMP:~/netg$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> ping_syntax = "ping {} source {}"
+>>>
+>>>
+>>> ping_syntax = "ping {} source {}"
+>>>
+>>> ping_cmd = "ping 1.1.1.1 source 2.2.2.2"
+>>>
+>>>
+>>>
+>>> description = 'Testing VariouS StRing funCtionS'
+>>> vlan_syntax = "vlan{}"
+>>>
+>>> if (ping_syntax.format('1.1.1.1','2.2.2.2')).startswith('ping'):
+...     print('correct syntax')
+... else:
+...     print('incorrect syntax')
+...
+correct syntax
+>>>
+>>> if (ping_syntax.format('1.1.1.1','2.2.2.2')).startswith('source'):
+...     print('correct syntax')
+... else:
+...     print('incorrect syntax')
+...
+incorrect syntax
+>>>
+>>> '1.1.1.1' in ping_cmd
+True
+>>>
+>>>
+>>> description
+'Testing VariouS StRing funCtionS'
+>>>
+>>> 'various' in description
+False
+>>>
+>>> 'various' in description.lowercase()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'lowercase'
+>>>
+>>>
+>>> 'various' in description.capitalize()
+True
+>>>
+>>> description.capitalize()
+'Testing various string functions'
+>>>
+>>> 'various' in description.islower()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: argument of type 'bool' is not iterable
+>>>
+>>>
+>>> 'various' in description.lower()
+True
+>>> description.lower()
+'testing various string functions'
+>>>
+>>> ip = input("enter an IP")
+enter an IP10.2.3.4
+>>>
+>>> ip = input("enter an IP: ")
+enter an IP: 10.1.2.3
+>>>
+>>>
+>>>
+>>>
+>>> ip = input("enter an IP: ")
+enter an IP:      10.1.2.3
+>>>
+>>> print(ip.strip())
+10.1.2.3
+>>>
+>>> ip = input("enter an IP: ")
+enter an IP: _10.1.2.3
+>>>
+>>> print(ip.strip(_))
+_10.1.2.3
+>>>
+>>>
+>>> print(ip.lstrip(_))
+_10.1.2.3
+>>>
+>>> print(ip.lstrip('_'))
+10.1.2.3
+>>>
+>>> print(ip.strip('_'))
+10.1.2.3
+>>>

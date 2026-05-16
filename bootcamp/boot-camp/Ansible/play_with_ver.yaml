@@ -1,0 +1,23 @@
+---
+- name: Play A
+  hosts: localhost
+  gather_facts: false
+  vars: 
+    device: "Router"
+    type: "Cisco"
+    ios: "ISR"
+    devices: 
+      - "R1"
+      - "R2"
+      - "R3"
+    device_cred:
+      user: "Pallav"
+      pass: "india"
+      token: "12345"
+      token_2: "3456"
+      alpa: "ABC"
+  tasks:
+    - name: "CRED"
+      debug:
+        var: "device[0:3]"
+  

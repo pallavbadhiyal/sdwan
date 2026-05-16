@@ -1,0 +1,6 @@
+{% for item in conf_vlan["vlans"] -%}
+vlan {{ item["vlan_id"] }}
+ name {{ item["vlan_name"] }}
+{% endfor %}
+end
+wr

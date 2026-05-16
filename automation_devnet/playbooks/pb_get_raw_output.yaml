@@ -1,0 +1,22 @@
+---
+- name: Gather interface status from Cisco switches
+  # hosts: switches
+  hosts: routers
+  # hosts: cisco_devices
+  gather_facts: no
+
+  tasks:
+    # - name: 1001 Run show interface description command
+    #   ios_command:
+    #     commands: show interface description
+    #   register: raw_output
+
+    - name: Parse the output using cli
+      ansible.netcommon.cli_parse:
+        command: show interface description
+        data: "{{ raw_output.stdout[0] }}"
+      register: parsed_output
+
+    - name: 1002 Display parsed structured output
+      debug:
+        var: raw_output

@@ -1,0 +1,2 @@
+sh ip bgp su
+sh ip int bri

@@ -1,0 +1,4 @@
+intf: Gig0/1
+speed: "1000"
+duplex: full
+desc: switchport

@@ -1,0 +1,4 @@
+host, uptime
+{% for k, v in intf_data.items() -%}
+{{ k }}, {{ v  }}
+{%endfor%}

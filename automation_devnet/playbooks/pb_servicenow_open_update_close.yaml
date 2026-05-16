@@ -1,0 +1,38 @@
+---
+- name: Open and manage ServiceNow Incident
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Open a new incident in ServiceNow
+      servicenow.servicenow.snow_incident:
+        instance: "https://dev221333.service-now.com/"   # ServiceNow instance name (e.g., dev12345)
+        user: "admin"        # ServiceNow username
+        password: "u$SZfmgT7%8K"    # ServiceNow password or API key
+        state: "present"             # To create the incident
+        short_description: "Created using AWX- Ansible"  # Incident short description
+        description: "This is an example incident created by Ansible" # Detailed description
+        priority: "2"               # Priority level (e.g., 1, 2, 3, 4)
+      register: incident_response
+
+    - name: Print incident information
+      debug:
+        msg: "Incident created with Sys ID: {{ incident_response.sys_id }}"
+
+    - name: Update incident notes
+      servicenow.servicenow.snow_incident:
+        instance: "https://dev221333.service-now.com/"
+        user: "admin"
+        password: "u$SZfmgT7%8K"  
+        state: "present"
+        sys_id: "{{ incident_response.sys_id }}"  # Use the incident Sys ID from previous task
+        comments: "This incident has been updated with additional information."
+
+    - name: Close the incident
+      servicenow.servicenow.snow_incident:
+        instance: "https://dev221333.service-now.com/"
+        user: "admin"
+        password: "u$SZfmgT7%8K"  
+        state: "present"
+        sys_id: "{{ incident_response.sys_id }}"  # Use the incident Sys ID from previous task
+        incident_state: "7"   # 7 corresponds to "Closed" in ServiceNow (can vary based on your configuration)
+        close_notes: "Incident closed by Ansible playbook."

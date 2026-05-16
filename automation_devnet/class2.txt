@@ -1,0 +1,517 @@
+
+netg@DESKTOP-EBH0I8A:~/devnet/auto-bundle$ git status
+git clone "repository http url"
+git add filename
+git commit -m "user friendly message"
+git push
+
+
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ python3
+
+
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> saltbox = "Salt"
+>>> 
+>>> salbox[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'salbox' is not defined. Did you mean: 'saltbox'?
+>>> 
+>>> saltbox[0]
+'S'
+>>> 
+>>> saltbox[1]
+'a'
+>>> saltbox[2]
+'l'
+>>> saltbox[3]
+'t'
+>>> 
+>>> saltbox[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> 
+>>> 
+>>> saltbox
+'Salt'
+>>> 
+>>> device = "Router"
+>>> 
+>>> device
+'Router'
+>>> 
+>>> device[0]
+'R'
+>>> device[1]
+'o'
+>>> device[2]
+'u'
+>>> 
+>>> 
+>>> for box in saltbox:
+...     print(box)
+... 
+S
+a
+l
+t
+>>> 
+>>> for dev in device:
+...     print(dev)
+... 
+R
+o
+u
+t
+e
+r
+>>> 
+>>> 
+>>> 
+>>> for dev in device:
+...     if dev == "t":
+...             print(dev)
+... 
+t
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> for dev in device:
+...  print(dev)
+...  print(dev)
+...  print(dev)
+... 
+R
+R
+R
+o
+o
+o
+u
+u
+u
+t
+t
+t
+e
+e
+e
+r
+r
+r
+>>> for dev in device:
+... print(dev)
+  File "<stdin>", line 2
+    print(dev)
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> 
+>>> 
+>>> 
+>>> for dev in device:
+...  pass
+... 
+>>> 
+>>> 
+>>> for dev in device:
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> 
+>>> 
+>>> 
+>>> for dev in device:
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> 
+>>> 
+>>> 
+>>> for dev in device:
+...  print(dev)
+... 
+R
+o
+u
+t
+e
+r
+>>> 
+>>> for dev in device:
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> 
+>>> 
+>>> 
+>>> 
+>>> ip = "10.20.30.40"
+>>> 
+>>> if ip.startswith("10"):
+...  print("Class A Private IP")
+... 
+Class A Private IP
+>>> 
+>>> 
+>>> 
+>>> intf = "Gigabit1/1"
+>>> 
+>>> intf
+'Gigabit1/1'
+>>> 
+>>> 
+>>> 
+>>> "Giga" == "GIGA"
+False
+>>> 
+>>> 
+>>> 
+>>> "GIGABIT1/1" == intf.upper()
+True
+>>> 
+>>> "GIGABIT1/1" == intf
+False
+>>> 
+>>> intf
+'Gigabit1/1'
+>>> 
+>>> 
+>>> "GIGABIT1/1" == intf
+False
+>>> 
+>>> 
+>>> "GIGABIT1/1" == intf.upper()
+True
+>>> 
+>>> print(intg)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'intg' is not defined. Did you mean: 'intf'?
+>>> 
+>>> print(intf)
+Gigabit1/1
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> ip = "10.20.30.40"
+>>> newip = ip.split(".")
+>>> 
+>>> ip
+'10.20.30.40'
+>>> newip
+['10', '20', '30', '40']
+>>> 
+>>> type(ip)
+<class 'str'>
+>>> type(newip)
+<class 'list'>
+>>> 
+>>> newip[0]
+'10'
+>>> newip[1]
+'20'
+>>> newip[2]
+'30'
+>>> newip[3]
+'40'
+>>> newip[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> 
+>>> 
+>>> for item in newip:
+...     print(item)
+... 
+10
+20
+30
+40
+>>> 
+>>> 
+>>> 
+>>> for item in newip:
+...     print(item)
+... 
+10
+20
+30
+40
+>>> for item in newip:
+...     print(item)
+...     print(item)
+  File "<stdin>", line 3
+    print(item)
+               ^
+IndentationError: unindent does not match any outer indentation level
+>>> 
+>>> 
+>>> 
+>>> for item in newip:
+...     print(item)
+...     print(item)
+  File "<stdin>", line 3
+    print(item)
+               ^
+IndentationError: unindent does not match any outer indentation level
+>>> 
+>>> 
+>>> for item in newip:
+...     print(item)
+...     print(item)
+... 
+10
+10
+20
+20
+30
+30
+40
+40
+>>> 
+>>> 
+>>> 
+>>> for item in newip:
+...  if item == "10":
+...   print(item)
+... 
+10
+>>> newip
+['10', '20', '30', '40']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> name = "India"
+>>> 
+>>> name.split("")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: empty separator
+>>> 
+>>> name.split("d")
+['In', 'ia']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> ip = "10.20.10.1"
+>>> 
+>>> newip = ip.split(".")
+>>> 
+>>> newip
+['10', '20', '10', '1']
+>>> 
+>>> 
+>>> for item in newip:
+...     if item == "10"
+  File "<stdin>", line 2
+    if item == "10"
+                   ^
+SyntaxError: expected ':'
+>>> 
+>>> for item in newip:
+...     if item == "10":
+...             print(item)
+... 
+10
+10
+>>> 
+>>> for item in newip:
+...     if item == "10":
+...             print(newip.index("10"))
+... 
+0
+0
+>>> 
+>>> 
+>>> newip
+['10', '20', '10', '1']
+>>> 
+>>> newip.index("10")
+0
+>>> 
+>>> dir(list)
+['__add__', '__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+>>> help(list.index)
+
+>>> 
+>>> 
+>>> newip.index("20")
+1
+>>> newip.index()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: index expected at least 1 argument, got 0
+>>> 
+>>> 
+>>> 
+>>> help(list.index)
+
+>>> 
+>>> 
+>>> newip.index("10", 0 , 3)
+0
+>>> 
+>>> 
+>>> 
+>>> 
+>>> cntr = 0
+>>> 
+>>> for item in newip:
+...     if item == "10":
+...             print(cntr)
+...     cntr = cntr + 1 
+... 
+0
+2
+>>> 
+>>> newip
+['10', '20', '10', '1']
+>>> 
+>>> 
+>>> 
+>>> for item in newip:
+...     cntr = cntr + 1 
+... 
+>>> 
+>>> cntr = 0
+>>> 
+>>> for item in newip:
+...     cntr = cntr + 1 
+...     print(cntr)
+... 
+1
+2
+3
+4
+>>> 
+>>> 
+>>> cntr = 0
+>>> for item in newip:
+...     print(cntr)
+...     cntr = cntr + 1 
+... 
+0
+1
+2
+3
+>>> 
+>>> 
+>>> 
+>>> 
+>>> for item in range(0, 3):
+...     print(newip[item])
+... 
+10
+20
+10
+>>> for item in range(0, 4):
+...     print(newip[item])
+... 
+10
+20
+10
+1
+>>> 
+>>> newip[0]
+'10'
+>>> newip[1]
+'20'
+>>> newip[2]
+'10'
+>>> newip[3]
+'1'
+>>> 
+>>> exit()
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ ls
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ git clone https://github.com/siddiquee4you/auto-bundle.git
+Cloning into 'auto-bundle'...
+fatal: cannot run /home/netg/.vscode-server/bin/f1b07bd25dfad64b0167beb15359ae573aecd2cc/extensions/git/dist/askpass.sh: No such file or directory
+Username for 'https://github.com': siddiquee4you
+fatal: cannot run /home/netg/.vscode-server/bin/f1b07bd25dfad64b0167beb15359ae573aecd2cc/extensions/git/dist/askpass.sh: No such file or directory
+Password for 'https://siddiquee4you@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/siddiquee4you/auto-bundle.git/'
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ git clone https://github.com/siddiquee4you/auto-bundle.git
+Cloning into 'auto-bundle'...
+fatal: cannot run /home/netg/.vscode-server/bin/f1b07bd25dfad64b0167beb15359ae573aecd2cc/extensions/git/dist/askpass.sh: No such file or directory
+Username for 'https://github.com': siddiquee4you@gmail.com
+fatal: cannot run /home/netg/.vscode-server/bin/f1b07bd25dfad64b0167beb15359ae573aecd2cc/extensions/git/dist/askpass.sh: No such file or directory
+Password for 'https://siddiquee4you@gmail.com@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/siddiquee4you/auto-bundle.git/'
+netg@DESKTOP-EBH0I8A:~/devnet/class2$ 
+
+
+testing

@@ -1,0 +1,37 @@
+vlans: 
+#   - vlan_id: 50
+#     vlan_name: sales2
+#   - vlan_id: 40
+#     vlan_name: mkt2
+#   - vlan_id: 70
+#     vlan_name: fin2
+
+    # - vlan_id: 2
+    #   name: VLAN_2
+    # - vlan_id: 3
+    #   name: VLAN_3
+    # - vlan_id: 4
+    #   name: VLAN_4
+    # - vlan_id: 5
+    #   name: VLAN_5
+    # - vlan_id: 6
+    #   name: VLAN_6
+    # - vlan_id: 7
+    #   name: VLAN_7
+    # - vlan_id: 8
+    #   name: VLAN_8
+    # - vlan_id: 9
+    #   name: VLAN_9
+
+
+loopback:
+        - loopback_id: 1
+          ip: 1.1.1.1 255.255.255.255
+        - loopback_id: 2
+          ip: 2.2.2.2 255.255.255.255
+        - loopback_id: 3
+          ip: 3.3.3.3 255.255.255.255
+        - loopback_id: 4
+          ip: 4.4.4.4 255.255.255.255
+        - loopback_id: 5
+          ip: 5.5.5.5 255.255.255.255

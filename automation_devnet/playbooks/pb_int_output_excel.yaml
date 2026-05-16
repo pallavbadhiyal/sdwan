@@ -1,0 +1,115 @@
+---
+- name: Get interface descriptions and save to Excel
+  hosts: switches
+  gather_facts: no
+  vars:
+    excel_file: "interface_descriptions.xlsx"
+  tasks:
+    - name: Gather interface descriptions
+      ios_command:  # Replace with the appropriate command module for your platform
+        commands:
+          - show interfaces description
+      register: interface_output
+
+    - name: Parse interface descriptions
+      set_fact:
+        interface_data: |
+          {% set interfaces = [] %}
+          {% for line in interface_output.stdout_lines[0][2:] %}  # Skip the first two lines (header)
+          {%   set fields = line.split() %}
+          {%   set _ = interfaces.append({"Interface": fields[0], "Description": " ".join(fields[3:])}) %}
+          {% endfor %}
+          {{ interfaces }}
+
+    - name: Prepare data for Excel
+      set_fact:
+        excel_data: >
+          [
+          ["Device", "Interface", "Description"]
+          {% for item in interface_data -%}
+          , ["{{ inventory_hostname }}", "{{ item.Interface }}", "{{ item.Description }}"]
+          {% endfor -%}
+          ]
+
+    - name: Write data to Excel
+      community.general.write_xlsx:
+        path: "{{ excel_file }}"
+        sheet_name: "Interfaces"
+        data: "{{ excel_data }}"
+
+
+
+# # - name: Export interface descriptions to CSV
+# #   hosts: all
+# #   gather_facts: no
+# #   vars:
+# #     csv_file: "interface_descriptions.csv"
+# #   tasks:
+# #     - name: Gather interface descriptions
+# #       ios_command:
+# #         commands:
+# #           - show interfaces description
+# #       register: interface_output
+
+# #     - name: Parse interface descriptions
+# #       set_fact:
+# #         interface_data: |
+# #           {% set interfaces = [] %}
+# #           {% for line in interface_output.stdout_lines[0][2:] %}
+# #           {%   set fields = line.split() %}
+# #           {%   set _ = interfaces.append({"Device": inventory_hostname, "Interface": fields[0], "Description": " ".join(fields[3:])}) %}
+# #           {% endfor %}
+# #           {{ interfaces }}
+
+# #     - name: Write data to CSV
+# #       copy:
+# #         dest: "{{ csv_file }}"
+# #         content: |
+# #           Device,Interface,Description
+# #           {% for item in interface_data %}
+# #           {{ item.Device }},{{ item.Interface }},{{ item.Description }}
+# #           {% endfor %}
+
+
+# - name: Export interface descriptions for all devices
+#   hosts: all
+#   gather_facts: no
+#   vars:
+#     output_csv: "interface_descriptions.csv"
+#   tasks:
+#     - name: Gather interface descriptions
+#       ios_command:
+#         commands:
+#           - show interfaces description
+#       register: interface_output
+
+#     - name: Parse interface descriptions
+#       set_fact:
+#         device_interfaces: |
+#           {% set interfaces = [] %}
+#           {% for line in interface_output.stdout_lines[0][2:] %}
+#           {%   set fields = line.split(maxsplit=3) %}
+#           {%   set _ = interfaces.append({
+#                   "Device": inventory_hostname,
+#                   "Interface": fields[0],
+#                   "Description": fields[3] if fields|length > 3 else "N/A"
+#                }) %}
+#           {% endfor %}
+#           {{ interfaces }}
+
+#     - name: Store host data into a global variable
+#       ansible.builtin.set_fact:
+#         all_interfaces: "{{ all_interfaces | default([]) + device_interfaces }}"
+#       run_once: false
+#       delegate_to: localhost
+
+#     - name: Write aggregated data to CSV
+#       copy:
+#         dest: "{{ output_csv }}"
+#         content: |
+#           Device,Interface,Description
+#           {% for entry in all_interfaces %}
+#           {{ entry.Device }},{{ entry.Interface }},{{ entry.Description }}
+#           {% endfor %}
+#       run_once: true
+#       delegate_to: localhost

@@ -1,0 +1,7 @@
+router bgp {{conf_data[0]}}
+{% for conf  in conf_data[1] -%}
+neighbor {{ conf.neighbor_ip }} remote-as {{ conf.remote_as }}
+network {{conf.network}} mask {{conf.mask}}
+{% endfor -%}
+end
+wr

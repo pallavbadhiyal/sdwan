@@ -1,0 +1,105 @@
+@ class calc:
+    # y=50
+    # def __new__():
+    #     pass
+    def __init__(self, y):
+    def __init__(ashish, y, z):
+        ashish.y = y
+        ashish.z = z
+        print("I am in init function")
+        print("Value of Y", y)
+
+    def add(self, y):
+    def add(ashish):
+        print("I am in Add function")
+        print("Value of Y in add function", y)
+        print("Value of Y in add function", ashish.y)
+        print("Value of Y in add function", ashish.z)
+        print(ashish.y + ashish.z)
+
+    def div(self, y):
+    def div(ashish):
+        print("I am in DIV function")
+        print("Value of Y in DIV function", y)
+        print("Value of Y in DIV function", ashish.y)
+
+    def mul(self, y):
+    def mul(ashish):
+        print("I am in MULTI function")
+        print("Value of Y in MUL function", y)
+        print("Value of Y in MUL function", ashish.y)
+
+# print(calc.x)
+# obj1 = calc(20) # Implicitly calls __init__ method
+@@ -31,10 +35,15 @@ def mul(self, y):
+# print("value of Global Y", obj2.y)
+# print("value of Global Y", calc.y)
+
+obj1 = calc(20)
+obj1.add(30) # Eplicit call
+obj1.div(40) # Eplicit call
+obj1.mul(50) # Eplicit call
+# obj1 = calc(20)
+# obj1.add(30) # Eplicit call
+# obj1.div(40) # Eplicit call
+# obj1.mul(50) # Eplicit call
+
+obj1.add(100) # Eplicit call
+# obj1.add(100) # Eplicit call
+
+obj1 = calc(20,100)
+obj1.add() # Eplicit call
+obj1.div() # Eplicit call
+obj1.mul() # Eplicit call
+
+=========================================
+
+
+# Learning Python class concept
+
+class calc:
+    # x=10
+    # y=50
+    # def __new__():
+    #     pass
+    def __init__(self, y, z):
+        self.y = y
+        self.z = z
+        print("I am in init function")
+        print("Value of Y", y)
+        
+    def add(self):
+        print("I am in Add function")
+        print("Value of Y in add function", self.y)
+        print("Value of Y in add function", self.z)
+        print(self.y + self.z)
+
+    def div(self):
+        print("I am in DIV function")
+        print("Value of Y in DIV function", self.y)
+
+    def mul(self):
+        print("I am in MULTI function")
+        print("Value of Y in MUL function", self.y)
+
+# print(calc.x)
+# obj1 = calc(20) # Implicitly calls __init__ method
+# print("value of X", obj1.x)
+# obj2 = calc(30)
+# print("value of X", obj2.x)
+
+# print("value of Global Y", obj1.y)
+# print("value of Global Y", obj2.y)
+# print("value of Global Y", calc.y)
+
+# obj1 = calc(20)
+# obj1.add(30) # Eplicit call
+# obj1.div(40) # Eplicit call
+# obj1.mul(50) # Eplicit call
+
+# obj1.add(100) # Eplicit call
+
+obj1 = calc(20,100)
+obj1.add() # Eplicit call
+obj1.div() # Eplicit call
+obj1.mul() # Eplicit call

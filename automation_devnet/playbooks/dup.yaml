@@ -1,0 +1,24 @@
+---
+
+- name: Play A
+  hosts: localhost
+  gather_facts: true
+  vars:
+    device: "Router"
+    ip: 10.1.1.1
+
+  tasks:
+    - name: Hello World
+      debug: 
+        msg: "Hello World"
+    - name: Print vars
+      debug:
+        var: device
+
+    - name: Set Fact for source ip
+      set_fact: 
+        src_ip:  "testing set fact for source ip 10.2.2.2"
+
+    - name: Display set fact value
+      debug:
+        var: src_ip

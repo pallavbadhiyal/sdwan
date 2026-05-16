@@ -1,0 +1,24 @@
+---
+- name: Gather interface status from Cisco switches
+  # hosts: switches
+  hosts: all
+  # hosts: cisco_devices
+  gather_facts: no
+
+  tasks:
+
+    - name: Run show version on remote devices
+      ios_command:
+        commands: 
+          # - show ip int brief
+        # - show version
+          - sh ver | in uptime
+      
+      register: ver
+
+    - name: "1010 - OUTPUT DEVICE INFO"
+      debug:
+        var: ver
+
+
+

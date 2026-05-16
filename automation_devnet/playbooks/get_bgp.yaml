@@ -1,0 +1,15 @@
+---
+- name: "Gather BGP Status from Cisco Routers"
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: "Run show BGP summary command"
+      ios_command:
+        commands:
+          - show ip bgp summary | begin Neighbor
+      register: bgp_output
+
+    - name: "Display BGP Output"
+      debug:
+        var: bgp_output.stdout_lines

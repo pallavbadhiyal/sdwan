@@ -1,0 +1,7 @@
+{% for intf in conf_data -%}
+interface {{ intf["int_id"] }} 
+ ip address {{ intf["ip"] }} 255.255.255.0
+ no shut
+{% endfor %}
+end
+wr

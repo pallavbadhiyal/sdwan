@@ -1,0 +1,28 @@
+- name: Parse network output and write to Excel
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run command on the device
+      ios_command:
+        commands:
+          - "show ip interface brief"
+      register: command_output
+
+    - name: Parse output with NTC template
+      set_fact:
+        parsed_data: "{{ command_output.stdout[0] | parse_cli_textfsm('templates/cisco_ios_show_ip_interface_brief.textfsm') }}"
+
+    - name: Prepare data for Excel
+      set_fact:
+        excel_data: >
+          {{
+            [{'Interface': item[0], 'IP Address': item[1], 'Status': item[4]} for item in parsed_data]
+          }}
+
+    - name: Write data to Excel
+      community.general.write_excel:
+        path: "parsed_output.xlsx"
+        data:
+          - sheet: "Parsed Data"
+            data: "{{ excel_data }}"
+        headers: yes

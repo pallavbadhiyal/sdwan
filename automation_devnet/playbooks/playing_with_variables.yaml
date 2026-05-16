@@ -1,0 +1,29 @@
+---
+- name: Play A
+  hosts: localhost
+  gather_facts: false
+  vars:
+    # device_type: "Router"
+    device_type: "{{ Router }}"
+    devices: 
+      - "Router1"
+      - "Router2"
+      - "Router3"
+    device_creds:
+      user_name: "NetG"
+      password: "India"
+
+  tasks:
+    # - name: "1010 - OUTPUT DEVICE TYPE"
+    #   debug:
+    #     var: "device_type"
+
+    - name: "1020 - OUTPUT DEVICES DATA"
+      debug:
+          # var: "devices"
+        msg: "{{ item  | split('r') | upper }}"
+      loop: "{{ devices }}"
+      # when: item == "Router2" 
+    # - name: "1030 - OUTPUT DEVICES CREDS"
+    #   debug:
+    #     var: "device_creds"

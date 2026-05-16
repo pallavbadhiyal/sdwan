@@ -1,0 +1,41 @@
+<AlertDefinition xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/SolarWinds.Orion.Core.Alerting.Models"><AlertID>2</AlertID><AlertMessage>'${N=SwisEntity;M=Name}' thin AP managed by '${N=SwisEntity;M=ControllerName}' WLC goes down.</AlertMessage><AlertRefID>a5c5f2fe-9208-4db2-90e6-95452bf6f40f</AlertRefID><Canned>true</Canned><Category /><CreatedBy i:nil="true" /><CustomProperties xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><d2p1:KeyValueOfstringanyType><d2p1:Key>ResponsibleTeam</d2p1:Key><d2p1:Value xmlns:d4p1="http://schemas.datacontract.org/2004/07/System" i:type="d4p1:DBNull" /></d2p1:KeyValueOfstringanyType></CustomProperties><Description>This alert is triggered when a currently active thin access point (AP) goes down. The alert works with the AP primary-secondary WLC configuration. For more information, see https://www.solarwinds.com/documentation/kbloader.aspx?kb=SF26730.</Description><Enabled>false</Enabled><ExecutionTimePeriods xmlns:d2p1="http://schemas.solarwinds.com/2008/Core" /><Frequency>PT1M</Frequency><LastEdit>2024-08-04T13:07:16.96Z</LastEdit><LicenseFeatureName>Wireless</LicenseFeatureName><Name>[Advanced] Thin AP Down</Name><NotificationEnabled>true</NotificationEnabled><NotificationSettings xmlns:d2p1="http://schemas.solarwinds.com/2008/Core" i:nil="true" /><ObjectType>Wireless Access Point</ObjectType><Reset><Conditions><ConditionChainItem><AndThenTimeInterval i:nil="true" /><ChainType>ResetInverseToTrigger</ChainType><Condition xmlns:d5p1="http://schemas.datacontract.org/2004/07/SolarWinds.Orion.Core.Models.Alerting" i:nil="true" /><ConjunctionOperator>None</ConjunctionOperator><IsInvertedMinCountThreshold>false</IsInvertedMinCountThreshold><NetObjectsMinCountThreshold i:nil="true" /><ObjectType i:nil="true" /><SustainTime i:nil="true" /><Type i:nil="true" /></ConditionChainItem></Conditions></Reset><ResetActions xmlns:d2p1="http://schemas.solarwinds.com/2008/Orion" /><Severity>Critical</Severity><Trigger><Conditions><ConditionChainItem><AndThenTimeInterval i:nil="true" /><ChainType>Trigger</ChainType><Condition xmlns:d5p1="http://schemas.datacontract.org/2004/07/SolarWinds.Orion.Core.Models.Alerting" xmlns:d5p2="http://schemas.datacontract.org/2004/07/SolarWinds.Orion.Core.Alerting.Plugins.Conditions.Sql" i:type="d5p2:AlertConditionCustomSql"><d5p2:Command>JOIN (
+    -- 1st table scope
+    SELECT DISTINCT ap1.ID
+    FROM (
+        SELECT api.ID,
+            api.IndexValue,
+            api.PreviousStatus,
+            api.NodeID
+        FROM (
+            SELECT ap.ID,
+                wi.[Value] IndexValue,
+                ap.PreviousStatus,
+                ap.NodeID
+            FROM Wireless_AccessPoints_View ap
+            JOIN Wireless_Indexes wi ON wi.ID = ap.NodeID
+                AND wi.[Index] = ap.[Index]
+            WHERE ap.[Type] = 1 AND ap.[Status] = 2
+            ) api
+        ) ap1 -- 1st table
+    LEFT JOIN (
+        -- 2nd table scope
+        SELECT api.ID,
+            api.IndexValue,
+            api.[Status],
+            api.NodeID
+        FROM (
+            SELECT ap.ID,
+                wi.[Value] IndexValue,
+                ap.[Status],
+                ap.NodeID
+            FROM Wireless_AccessPoints_View ap
+            JOIN Wireless_Indexes wi ON wi.ID = ap.NodeID
+                AND wi.[Index] = ap.[Index]
+            WHERE ap.[Type] = 1
+            ) api
+        ) ap2 -- 2nd table
+        ON ap1.NodeID &lt;&gt; ap2.NodeID AND ap1.IndexValue = ap2.IndexValue
+    WHERE ap2.ID IS NULL -- single AP
+        OR (ap1.PreviousStatus &lt;&gt; 0) -- AP was not down then became down(part of primary-secondary WLC setup)
+        OR (ap2.[Status] = 0) -- disappeared from primary/secondary WLC. So, we need to re-create alert
+    ) disapAPs ON NPM_NV_WL_ALERT_APS_V.ID = disapAPs.ID</d5p2:Command></Condition><ConjunctionOperator>None</ConjunctionOperator><IsInvertedMinCountThreshold>false</IsInvertedMinCountThreshold><NetObjectsMinCountThreshold i:nil="true" /><ObjectType>Wireless Access Point</ObjectType><SustainTime i:nil="true" /><Type xmlns:d5p1="http://schemas.datacontract.org/2004/07/SolarWinds.Orion.Core.Alerting.Plugins.Conditions.Sql" i:type="d5p1:ConditionTypeCustomSql" /></ConditionChainItem></Conditions></Trigger><TriggerActions xmlns:d2p1="http://schemas.solarwinds.com/2008/Orion"><d2p1:ActionDefinition><d2p1:ActionProperties><d2p1:ActionProperty><d2p1:IsShared>false</d2p1:IsShared><d2p1:PropertyName>EscalationLevel</d2p1:PropertyName><d2p1:PropertyValue>0</d2p1:PropertyValue></d2p1:ActionProperty><d2p1:ActionProperty><d2p1:IsShared>false</d2p1:IsShared><d2p1:PropertyName>executionIfAknowledge</d2p1:PropertyName><d2p1:PropertyValue>true</d2p1:PropertyValue></d2p1:ActionProperty><d2p1:ActionProperty><d2p1:IsShared>false</d2p1:IsShared><d2p1:PropertyName>executionRepeatTimeSpan</d2p1:PropertyName><d2p1:PropertyValue>0</d2p1:PropertyValue></d2p1:ActionProperty><d2p1:ActionProperty><d2p1:IsShared>false</d2p1:IsShared><d2p1:PropertyName>Message</d2p1:PropertyName><d2p1:PropertyValue>'${N=SwisEntity;M=Name}' thin AP managed by '${N=SwisEntity;M=ControllerName}' WLC goes down.</d2p1:PropertyValue></d2p1:ActionProperty></d2p1:ActionProperties><d2p1:ActionTypeID>WriteToNPMEventLog</d2p1:ActionTypeID><d2p1:Approved i:nil="true" /><d2p1:Description>Log the Alert in the Network Performance Monitor Event Log</d2p1:Description><d2p1:Enabled>true</d2p1:Enabled><d2p1:ID>2</d2p1:ID><d2p1:IconPath i:nil="true" /><d2p1:IsShared>false</d2p1:IsShared><d2p1:Order>1</d2p1:Order><d2p1:TimePeriods xmlns:d4p1="http://schemas.solarwinds.com/2008/Core" /><d2p1:Title>NetPerfMon Event Log : '${N=SwisEntity;M=Name}' thin AP managed by '${N=SwisEntity;M=ControllerName}' WLC goes down.</d2p1:Title><d2p1:TransitiveID i:nil="true" /></d2p1:ActionDefinition></TriggerActions><Uri>swis://WIN-DFKS3AJBLJ9./Orion/Orion.AlertConfigurations/AlertID=2</Uri></AlertDefinition>

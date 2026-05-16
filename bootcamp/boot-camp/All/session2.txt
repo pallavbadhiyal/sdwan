@@ -1,0 +1,267 @@
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> 
+>>> 
+>>> 
+>>> name = "NetG"
+>>> 
+>>> type(name)
+<class 'str'>
+>>> 
+>>> id(name)
+140257711753392
+>>> 
+>>> id("NetG")
+140257711753392
+>>> 
+>>> name1 = "NetG"
+>>> 
+>>> id(name1)
+140257711753392
+>>> 
+>>> id("NetG")
+140257711753392
+>>> 
+>>> 
+>>> name
+'NetG'
+>>> print(name)
+NetG
+>>> 
+>>> 
+>>> 
+>>> 
+>>> name = "NetG"
+>>> 
+>>> 
+>>> name[0]
+'N'
+>>> 
+>>> name[1]
+'e'
+>>> 
+>>> name[2]
+'t'
+>>> 
+>>> name[3]
+'G'
+>>> 
+>>> name[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> 
+>>> id(name[0])
+140257713321136
+>>> 
+>>> 
+>>> 
+>>> id(name)
+140257711753392
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> id(name[1])
+140257713170800
+>>> 
+>>> id(name[2])
+140257712931440
+>>> 
+>>> 
+>>> 
+>>> id(name[0:2])
+140257712667248
+>>> 
+>>> 
+>>> name[0:2]
+'Ne'
+>>> 
+>>> 
+>>> len(name)
+4
+>>> 
+>>> name[0:4]
+'NetG'
+>>> 
+>>> name[2:4]
+'tG'
+>>> name[2:5]
+'tG'
+>>> 
+>>> 
+>>> 
+>>> name[5:7]
+''
+>>> 
+>>> name[5]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> 
+>>> 
+>>> 
+>>> 
+>>> name[-1]
+'G'
+>>> 
+>>> name[-2]
+'t'
+>>> 
+>>> name[-3]
+'e'
+>>> 
+>>> name[-4]
+'N'
+>>> 
+>>> name[-5]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> 
+>>> 
+>>> 
+>>> 
+>>> name[0:-2]
+'Ne'
+>>> 
+>>> 
+>>> name[0:2]
+'Ne'
+>>> 
+>>> name[0:-3]
+'N'
+>>> 
+>>> 
+>>> name[0:-1]
+'Net'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> name[-1::]
+'G'
+>>> 
+>>> name[::-1]
+'GteN'
+>>> 
+>>> 
+>>> 
+>>> name = "NetG India"
+>>> 
+>>> 
+>>> name[0:6:2]
+'Nt '
+>>> 
+>>> name[0:7:2]
+'Nt n'
+>>> 
+>>> 
+>>> name[0:8:2]
+'Nt n'
+>>> 
+>>> name[0:9:2]
+'Nt ni'
+>>> 
+>>> 
+>>> name[0:10:2]
+'Nt ni'
+>>> 
+>>> name[0:10:3]
+'NGna'
+>>> 
+>>> name[0:10]
+'NetG India'
+>>> 
+>>> name[0:10:3]
+'NGna'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> type(name)
+<class 'str'>
+>>> 
+>>> 
+>>> name
+'NetG India'
+>>> 
+>>> name.upper()
+'NETG INDIA'
+>>> 
+>>> 
+>>> print(name)
+NetG India
+>>> 
+>>> 
+>>> devicemodel = 9000
+>>> 
+>>> type(devicemodel)
+<class 'int'>
+>>> 
+>>> print(devicemodel)
+9000
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_count', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(dict)
+['__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__ior__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__ror__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> dir(name)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 
+>>> help(str.upper)
+
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> intf = "Gigbit0/1"
+>>> 
+>>> intf = "GigEthernet0/1"
+>>> 
+>>> 
+>>> intf1 = "GigEthernet0/1"
+>>> 
+>>> intf2 = "GIGEthernet0/1"
+>>> 
+>>> 
+>>> intf1 == intf2 
+False
+>>> 
+>>> intf1 == intf2 
+False
+>>> 
+>>> intf1.upper() == intf2.upper()
+True
+>>> 
+>>> 
+>>> exit()

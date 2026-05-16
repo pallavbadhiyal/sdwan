@@ -1,0 +1,6 @@
+{
+	"intf": "Gig0/1",
+	"speed": 100,
+	"duplex": "full",
+	"desc": "switchport"
+}

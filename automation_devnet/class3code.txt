@@ -1,0 +1,183 @@
+netg@DESKTOP-EBH0I8A:~/devnet/auto-bundle$ python3
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> ip = "10.20.30.40"
+>>> 
+>>> 
+>>> 
+>>> ip[0:3]
+'10.'
+>>> 
+>>> ip[1:3]
+'0.'
+>>> ip[3:5]
+'20'
+>>> 
+>>> ip
+'10.20.30.40'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> ip[5:8]
+'.30'
+>>> 
+>>> ip[6:8]
+'30'
+>>> 
+>>> 
+>>> 
+>>> newip = input("Enter your ip")
+Enter your ip20.30.40.50
+>>> 
+>>> newip
+'20.30.40.50'
+>>> 
+>>> newip = input("Enter your ip")
+Enter your ip
+>>> 
+>>> 
+>>> newip
+''
+>>> 
+>>> 
+>>> var1 = 10
+>>> var2 = "vlan"
+>>> 
+>>> command = var2 + var1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>> 
+>>> 
+>>> 
+>>> var1 = "10"
+>>> 
+>>> var2 = "vlan"
+>>> 
+>>> command = var2 + var1
+>>> 
+>>> command
+'vlan10'
+>>> 
+>>> 
+>>> var1 = 10
+>>> 
+>>> var2 = "vlan"
+>>> 
+>>> command = var2 + str(var1)
+>>> 
+>>> command
+'vlan10'
+>>> 
+>>> command = int(var2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'vlan'
+>>> 
+>>> 
+>>> 
+>>> var1 = "10"
+>>> 
+>>> type(var1)
+<class 'str'>
+>>> 
+>>> 
+>>> var1 = "10"
+>>> var3 = int(var1)
+>>> type(var3)
+<class 'int'>
+>>> 
+>>> 
+>>> 
+>>> var1 = "10"
+>>> var2 = "vlan "
+>>> 
+>>> vlanid = "10"
+>>> commandkey = "vlan "
+>>> 
+>>> vlan_command = commandkey + vlanid
+>>> 
+>>> vlan_command
+'vlan 10'
+>>> 
+>>> 
+>>> vlanid = 10
+>>> vlan_command = commandkey + vlanid
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>> 
+>>> vlan_command = commandkey + str(vlanid)
+>>> 
+>>> vlan_command
+'vlan 10'
+>>> 
+>>> 
+>>> var1 = 10
+>>> var2 = str(var1)
+>>> 
+>>> var1 = "vlan2"
+>>> 
+>>> int(var1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'vlan2'
+>>> 
+>>> 
+>>> var1 = 10
+>>> int(var1)
+10
+>>> str(var1)
+'10'
+>>> 
+>>> var1 = "10"
+>>> int(var1)
+10
+>>> 
+>>> var1 = "vlan"
+>>> 
+>>> int(var1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'vlan'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> var1 = "10.10"
+>>> 
+>>> int(var1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '10.10'
+>>> 
+>>> 
+>>> var1 = 10.10
+>>> 
+>>> int(var1)
+10
+>>> 
+>>> var1 = 10
+>>> float(var1)
+10.0
+>>> 
+>>> var1 = 10.0
+>>> str(var1)
+'10.0'
+>>> 
+>>> 
+>>> int(var1)
+10
+>>> 

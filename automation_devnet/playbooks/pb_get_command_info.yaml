@@ -1,0 +1,26 @@
+
+---
+- name: "GATHER INTERFACE STATUS FROM CISCO SWITCHES"
+  hosts: all
+  gather_facts: false
+
+  tasks:
+
+    - name: 1001 - Run show version on remote devices
+      ios_command:
+        commands: 
+          - show ip interface brief
+          # - show vlan brief
+      register: interface_output
+
+    - name: 1002 - Read in parse_genie role
+      include_role:
+        name: clay584.parse_genie
+
+    - name: 1003 - Parse interface data using genie
+      set_fact:
+        parsed_interfaces: "{{ interface_output.stdout[0] | parse_genie(command='show ip interface brief', os='ios') }}"
+
+    - name: Call Filter to Generate Excel
+      debug:
+        msg: "{{ parsed_interfaces | convert_interfaces_to_excel }}"
